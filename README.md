@@ -6,14 +6,21 @@ Here are my code in the practicum sessions during 2025 Summer School on Machine 
 Thanks **Jun Chen** from Fujian Institute of Research on the Structure of Matter, Chinese Academy of Sciences for providing starting code and led the session  
 **Brief (1)**: Predicted activation energy of H-atom transfer (HAT) reaction using multiple regression models including neural-network, Gradient Boosting, and XGBoost  
 **Brief (2)**: Predicted activity of metal cluster catalyst of HAT reaction using multiple classification models including neural-network, Random Forest, and Supporting Vector Machine  
-**Brief (3)**: Contructed Potential Energy Surface (PES) of H2+OH <-> H2O+H reaction using Gaussian Process and Neural Network (By my teammate Athish, Ciara, Nellie, and Yuquan)
+**Brief (3)**: Contructed Potential Energy Surface (PES) of H2+OH <-> H2O+H reaction using Gaussian Process and Neural Network (By my teammate Athish, Ciara, Nellie, and Yuquan)  
+
+Reference: J. Chem. Phys., 2013, 138(15): 154301.
 
 ## Day2: Learning Interatomic Potentials with MACE
 Thanks **Jun Chen** from Fujian Institute of Research on the Structure of Matter, Chinese Academy of Sciences for providing starting code and led the session  
-**Brief**: Train a MACE ML potential model using AMLP toolkit with DFT single-point data and perform MD simulations in comparison with first-principle trajectories  
+**Brief**: Train a MACE ML potential model using AMLP toolkit with DFT single-point data and perform MD simulations in comparison with first-principle trajectories    
+  
+Reference: R. Drautz, Phys. Rev. B 99, 014104 (2019)
 
 ## Day3: Transformer-based Molecular Structure Elucidation Using NMR Spectra
 Thanks **Micheal Chen** from New York University and Simons Foundation for providing starting code and led the session  
 **Brief**:Trained a multi-task model based on Encoder-Decoder Transformer architechure to elucidate molecular structure from NMR data  
 
-Note: Unfortunately some uncompleted codes are **lost** in my old laptop, so the corresponding starting codes are provided instead.
+Reference: Hu, Frank, et al. ACS Central Science 10.11 (2024): 2162-2170.  
+
+
+Note: Unfortunately some completed codes are **lost** in my old laptop, so the corresponding starting codes are provided instead.
