@@ -6,7 +6,7 @@ Here are my code in the practicum sessions during 2025 Summer School on Machine 
 Thanks **Jun Chen** from Fujian Institute of Research on the Structure of Matter, Chinese Academy of Sciences for providing starting code and led the session  
 **Brief (1)**: Predicted activation energy of H-atom transfer (HAT) reaction using multiple regression models including neural-network, Gradient Boosting, and XGBoost  
 **Brief (2)**: Predicted activity of metal cluster catalyst of HAT reaction using multiple classification models including neural-network, Random Forest, and Supporting Vector Machine  
-**Brief (3)**: Contructed Potential Energy Surface (PES) of H2+OH <-> H2O+H reaction using Gaussian Process and Neural Network  
+**Brief (3)**: Contructed Potential Energy Surface (PES) of H2+OH <-> H2O+H reaction using Gaussian Process and Neural Network (By my teammate Athish, Ciara, Nellie, and Yuquan)
 
 ## Day2: Learning Interatomic Potentials with MACE
 Thanks **Jun Chen** from Fujian Institute of Research on the Structure of Matter, Chinese Academy of Sciences for providing starting code and led the session  
