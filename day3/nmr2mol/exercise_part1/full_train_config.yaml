@@ -1,0 +1,62 @@
+data:
+  alphabet: data/alphabet.npy
+  eps: 0.005
+  front_load_data_processing: true
+  input_generator: SubstructureRepresentationOneIndexed
+  input_generator_addn_args: {}
+  label_file:
+  - data/substructures.h5
+  smiles_file:
+  - data/smiles.npy
+  spectra_file:
+  - null
+  target_generator: SMILESRepresentationTokenized
+  target_generator_addn_args: {}
+global_args:
+  dtype: float32
+  ngpus: 1
+  savedir: checkpoints
+  seed: 42
+model:
+  load_model: null
+  model_args:
+    d_model: 128
+    dim_feedforward: 1024
+    source_size: 958
+    src_embed: nn.embed
+    src_embed_options: {}
+    src_forward_function: src_fwd_fxn_basic
+    src_pad_token: 0
+    target_size: 24
+    tgt_embed: nn.embed
+    tgt_embed_options: {}
+    tgt_forward_function: tgt_fwd_fxn_basic
+    tgt_pad_token: 21
+  model_type: TransformerModel
+training:
+  checkpoint_loss_metric: val
+  dloader_args:
+    batch_size: 32
+    shuffle: true
+  loss_fn: CrossEntropyLoss
+  loss_fn_args:
+    ignore_index: 21
+  nepochs: 500
+  optimizer: Adam
+  optimizer_args:
+    betas:
+    - 0.9
+    - 0.98
+    eps: 1.0e-09
+    lr: 1.0e-05
+    weight_decay: 1.0e-05
+  prev_epochs: 0
+  scheduler: null
+  splits:
+  - data/split_indices.p
+  test_freq: 10
+  test_size: 0.1
+  top_checkpoints_n: 10
+  train_size: 0.8
+  val_size: 0.1
+  write_freq: 100

@@ -1,0 +1,90 @@
+data:
+  alphabet: data/alphabet.npy
+  eps: 0.005
+  front_load_data_processing: true
+  input_generator: SpectrumRepresentationUnprocessed
+  input_generator_addn_args: {}
+  label_file:
+  - data/substructures.h5
+  smiles_file:
+  - data/smiles.npy
+  spectra_file:
+  - data/spectra.h5
+  target_generator: SMILESRepresentationTokenizedWithSubstructs
+  target_generator_addn_args: {}
+global_args:
+  dtype: float32
+  ngpus: 1
+  savedir: checkpoints
+  seed: 42
+model:
+  load_model: null
+  model_args:
+    forward_fxn: src_fwd_fxn_conv_embedding
+    src_embed: ConvolutionalEmbedding
+    src_embed_options:
+      d_model: 128
+      n_cnmr_features: 80
+      n_hnmr_features: 28000
+      use_cnmr: true
+      use_hnmr: true
+    structure_model: TransformerModel
+    structure_model_args:
+      d_model: 128
+      dim_feedforward: 1024
+      source_size: 28045
+      src_embed: null
+      src_embed_options: {}
+      src_forward_function: src_fwd_fxn_packed_tensor
+      src_pad_token: null
+      target_size: 24
+      tgt_embed: nn.embed
+      tgt_embed_options: {}
+      tgt_forward_function: tgt_fwd_fxn_basic
+      tgt_pad_token: 21
+    structure_model_ckpt: null
+    substructure_model: EncoderModel
+    substructure_model_args:
+      d_model: 128
+      d_out: 957
+      dim_feedforward: 1024
+      nhead: 4
+      num_layers: 4
+      output_head: SingleLinear
+      output_head_opts:
+        d_model: 128
+        d_out: 957
+      pooler: SeqPool
+      pooler_opts:
+        d_model: 128
+      source_size: 28045
+      src_embed: null
+      src_embed_options: {}
+      src_forward_function: src_fwd_fxn_packed_tensor
+      src_pad_token: null
+    substructure_model_ckpt: data/transformer_checkpoint.ckpt
+  model_type: MultiTaskModel
+training:
+  checkpoint_loss_metric: val_loss_0
+  dloader_args:
+    batch_size: 64
+    shuffle: true
+  loss_fn: MultiTaskLoss
+  loss_fn_args:
+    ignore_index: 21
+    structure_weight: 1
+    substructure_weight: 1
+  nepochs: 1500
+  optimizer: Adam
+  optimizer_args:
+    lr: 1.0e-05
+  prev_epochs: 0
+  scheduler: null
+  splits:
+  - data/split_indices.p
+  test_freq: 10
+  test_size: 0.1
+  top_checkpoints_n: 10
+  train_size: 0.8
+  val_size: 0.1
+  write_freq: 100

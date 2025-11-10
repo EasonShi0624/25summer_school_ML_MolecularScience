@@ -1,0 +1,1 @@
+/gpfsnyu/home/mc10050/nmr2mol/datasets/split_indices.p

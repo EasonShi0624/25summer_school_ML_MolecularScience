@@ -1,0 +1,9 @@
+ 6                               # NIN (number of features)
+ 2                               # NHID (number of hidden layers)
+ 30                              # NL(1)~NL(NHID)
+ 30                              # NL(1)~NL(NHID)
+ 0.90                            # RATIO (training set / validation set)
+ 2000                            # NLOOP (max epoch in a fitting)
+ 3                               # NCYCLE (number of fittings)
+ 6                               # MAX_FAIL (early stopping)
+ oh3-abinitio.txt                # data file
